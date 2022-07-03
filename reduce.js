@@ -7,13 +7,15 @@ function sumNumbers(array) {
 }
 
 function finalSaving(prices, available) {
-    let finalSaving = prices.reduce(cbPrices);
-    return available - finalSaving;
+    return prices.reduce(cbPrices, available);
 }
 
-function cbPrices(previous, current) {
-    return previous + current;
-}
+function cbPrices(previous, current, index) {
+    console.log('rodada ', index + 1);
+    console.log({ previous });
+    console.log({ current });
+    return previous - current;
+};
 
 let array =[1, 2, 4, 5, 10, 15, 21];
 
